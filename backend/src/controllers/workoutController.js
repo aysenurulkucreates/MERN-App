@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const getWorkouts = async (req, res) => {
   const { page } = req.query;
   const limit = 2;
-  const skip = number(page - 1) * limit;
+  const skip = Number(page - 1) * limit;
 
   const user_id = req.user._id;
   const workouts = await Workout.find({ user_id })
